@@ -1,0 +1,53 @@
+@use "./partials/typography.scss" as *;
+@use "./partials/variables.scss" as *;
+@use "./partials/mixins.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+body {
+  padding: 1rem;
+  background-color: $primary-background-color-1;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+.nav {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  &__logo {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__logo-text {
+    font-family: Pacifico;
+
+    &--photo {
+      font-size: 1rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    text-decoration-line: none;
+    text-transform: lowercase;
+    &--item {
+      margin: 0.2rem;
+    }
+  }
+}

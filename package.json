@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "nodemailer": "^6.9.13"
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0"
   }
 }
