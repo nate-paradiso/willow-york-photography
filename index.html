@@ -3,13 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./scss/global.scss" />
-    <title>Willow & York Photography</title>
+    <title>Willow York Photography</title>
+    <link rel="stylesheet" href="./scss/global.css" />
   </head>
   <body>
-    <header>
-      <p>home</p>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav__logo">
+            <h1 class="nav__logo-text">Willow York</h1>
+            <h4 class="nav__logo-text--photography">Photography</h4>
+          </div>
+          <button class="nav__toggle" aria-label="Toggle navigation">
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+          </button>
+        </div>
+        <ul class="nav__links">
+          <li class="nav__links--item"><a href="./">Portfolio</a></li>
+          <li class="nav__links--item"><a href="./pages/pricing.html">Pricing</a></li>
+          <li class="nav__links--item"><a href="./pages/about.html">About</a></li>
+          <li class="nav__links--item"><a href="./pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <hero class="hero">
+        <div class="hero__container">
+          <img
+            class="hero__container--image"
+            src="assets/images/Screenshot 2024-06-11 at 3.39.12 PM.png"
+            alt="bride"
+          />
+        </div>
+        <div class="hero__container">
+          <h1 class="hero__title">
+            Crafting creative images for those living outside of tradition
+          </h1>
+          <img
+            class="hero__container--image"
+            src="assets/images/Screenshot 2024-06-11 at 3.39.12 PM.png"
+            alt="bride"
+          />
+        </div>
+        <div class="hero__container">
+          <img
+            class="hero__container--image"
+            src="assets/images/Screenshot 2024-06-11 at 3.39.12 PM.png"
+            alt="bride"
+          />
+        </div>
+      </hero>
     </header>
     <main></main>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>
