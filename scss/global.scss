@@ -28,6 +28,7 @@ body {
   font-weight: 400;
 }
 .nav-container {
+  padding-bottom: 2rem;
   @media (max-width: 768px) {
     border-bottom: 1px solid white;
   }
@@ -50,7 +51,8 @@ body {
     @media (max-width: 768px) {
       margin-left: auto;
     }
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-top: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -63,6 +65,7 @@ body {
 
   &__logo-text {
     font-family: Pacifico;
+    margin-bottom: 0.5rem;
     color: $font;
     @media (min-width: 768px) {
       font-size: 5rem;
@@ -94,6 +97,7 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-between;
+    align-self: center;
     width: 30px;
     height: 18px;
     background: none;
@@ -104,6 +108,7 @@ body {
     &:hover {
       width: 25px; // Adjust as needed
       transition: width 0.1s ease; // Smooth transition
+      color: $hover;
     }
 
     &-bar {
@@ -154,7 +159,7 @@ body {
 .hero {
   margin: auto;
   display: flex;
-  margin-left: 3rem;
+  // margin-left: 3rem;
   align-items: center;
   justify-content: center;
   &__container {
@@ -163,12 +168,13 @@ body {
     }
   }
   &__title {
+    min-width: 15rem;
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 24px; /* Adjust font size as needed */
+    font-size: 2rem; /* Adjust font size as needed */
     text-align: center;
     z-index: 1; /* Ensure title appears above image */
   }

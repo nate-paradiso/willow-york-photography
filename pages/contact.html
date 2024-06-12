@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Willow York Photography</title>
     <link rel="stylesheet" href="../scss/global.css" />
+    <link rel="stylesheet" href="../scss/contact.css" />
   </head>
   <body>
     <header class="header">
       <nav class="nav">
         <div class="nav-container">
           <div class="nav__logo">
-            <h1 class="nav__logo-text">Willow York</h1>
+            <a href="../index.html">
+              <h1 class="nav__logo-text">Willow York</h1>
+            </a>
             <h4 class="nav__logo-text--photography">Photography</h4>
           </div>
           <button class="nav__toggle" aria-label="Toggle navigation">
@@ -28,8 +31,36 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <section class="contact">
+        <h2>Get in Touch</h2>
+        <form
+          class="contact__form"
+          action="/.netlify/functions/contact"
+          method="POST"
+          onsubmit="return validateForm()"
+        >
+          <label for="name">Name</label>
+          <input class="contact__form--input" type="text" id="name" name="name" />
 
+          <label for="email">Email</label>
+          <input
+            class="contact__form--input"
+            class="contact__form--input"
+            type="email"
+            id="email"
+            name="email"
+          />
+
+          <label for="message">Message</label>
+          <textarea class="contact__form--input" id="message" name="message" rows="5"></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="../js/contactValidation.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

@@ -34,6 +34,7 @@ body {
 }
 
 .nav-container {
+  padding-bottom: 2rem;
   border: none;
   display: flex;
   justify-content: center;
@@ -54,7 +55,8 @@ body {
   margin: auto;
 }
 .nav__logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,6 +71,7 @@ body {
 }
 .nav__logo-text {
   font-family: Pacifico;
+  margin-bottom: 0.5rem;
   color: #ffffff;
 }
 @media (min-width: 768px) {
@@ -102,6 +105,7 @@ body {
   display: none;
   flex-direction: column;
   justify-content: space-between;
+  align-self: center;
   width: 30px;
   height: 18px;
   background: none;
@@ -113,6 +117,7 @@ body {
 .nav__toggle:hover {
   width: 25px;
   transition: width 0.1s ease;
+  color: #e9d3bd;
 }
 .nav__toggle-bar {
   position: relative;
@@ -153,18 +158,16 @@ body {
 .hero {
   margin: auto;
   display: flex;
-  margin-left: 3rem;
   align-items: center;
   justify-content: center;
 }
 .hero__title {
+  min-width: 15rem;
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px; /* Adjust font size as needed */
+  font-size: 2rem; /* Adjust font size as needed */
   text-align: center;
   z-index: 1; /* Ensure title appears above image */
-}
-
-/*# sourceMappingURL=global.css.map */
+}/*# sourceMappingURL=global.css.map */
