@@ -34,7 +34,6 @@ body {
 }
 
 .nav-container {
-  padding-bottom: 2rem;
   border: none;
   display: flex;
   justify-content: center;
@@ -92,9 +91,16 @@ body {
 .nav__links--item {
   margin: 0 5.5rem;
 }
+@media (min-width: 769px) {
+  .nav__links--item {
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+  }
+}
 @media (min-width: 1280px) {
   .nav__links--item {
     margin: 0 10rem;
+    margin-bottom: 0.5rem;
   }
 }
 .nav__toggle {
@@ -154,12 +160,14 @@ body {
 .hero {
   margin: auto;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
+  width: 100%; /* Make the container full width */
+  overflow: hidden; /* Hide any overflow */
 }
 .hero__container {
   display: flex;
-  margin: auto;
   justify-content: center;
   width: 100%;
 }
@@ -203,9 +211,14 @@ body {
   margin: auto;
   font-family: Pacifico;
   color: #442c15;
-  font-size: 2rem;
+  font-size: 2.5rem;
   justify-content: center;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .title-book {
+    font-size: 4rem;
+  }
 }
 
 .photos {
@@ -238,6 +251,8 @@ body {
   text-align: center;
 }
 .statement__container {
+  display: flex;
+  align-items: center;
   flex-direction: column;
   display: flex;
   justify-content: center;
@@ -246,6 +261,23 @@ body {
   .statement__container {
     flex-direction: row;
   }
+}
+.statement__container--pricing {
+  border-bottom: 2px solid #442c15;
+}
+@media (min-width: 768px) {
+  .statement__container--pricing {
+    flex-direction: column;
+  }
+}
+.statement__price {
+  margin: 0.5rem;
+  color: #442c15;
+}
+.statement__title {
+  color: #442c15;
+  font-size: 2rem;
+  font-family: Pacifico;
 }
 
 .about {
@@ -286,6 +318,13 @@ body {
   outline: none;
   cursor: pointer;
   box-shadow: none;
+  transition: all 0.3s ease;
+}
+.about__button:hover {
+  background-color: #e9d3bd;
+}
+.about__text {
+  max-width: 400px;
 }
 
 .footer {
@@ -305,7 +344,30 @@ body {
   color: #442c15;
   margin: 1rem;
 }
-.footer__instagram {
+.footer__link-container {
+  display: flex;
+  justify-content: center; /* Centers the link horizontally */
+  align-items: center;
   margin: 1rem;
-  height: 32px;
+}
+.footer__link {
+  display: inline-block;
+}
+.footer__instagram {
+  display: block; /* Removes any extra space below the image */
+}
+
+.pricing {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .pricing {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .reverse {
+    flex-direction: row-reverse;
+  }
 }/*# sourceMappingURL=global.css.map */

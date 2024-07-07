@@ -28,7 +28,6 @@ body {
   font-weight: 400;
 }
 .nav-container {
-  padding-bottom: 2rem;
   @media (max-width: 768px) {
     // border-bottom: 1px solid white;
   }
@@ -89,8 +88,13 @@ body {
 
     &--item {
       margin: 0 5.5rem;
+      @media (min-width: 769px) {
+        text-decoration: underline;
+        margin-bottom: 0.5rem;
+      }
       @media (min-width: 1280px) {
         margin: 0 10rem;
+        margin-bottom: 0.5rem;
       }
     }
   }
@@ -161,12 +165,14 @@ body {
 .hero {
   margin: auto;
   display: flex;
-  // margin-left: 3rem;
+  width: 100%;
   align-items: center;
   justify-content: center;
+  width: 100%; /* Make the container full width */
+  overflow: hidden; /* Hide any overflow */
   &__container {
     display: flex;
-    margin: auto;
+    // margin: auto;
     justify-content: center;
     width: 100%;
 
@@ -210,9 +216,12 @@ body {
     margin: auto;
     font-family: Pacifico;
     color: $primary-background-color-1;
-    font-size: 2rem;
+    font-size: 2.5rem;
     justify-content: center;
     text-align: center;
+    @media (min-width: 768px) {
+      font-size: 4rem;
+    }
   }
 }
 .photos {
@@ -240,12 +249,29 @@ body {
   margin: 1rem;
   text-align: center;
   &__container {
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
+    display: flex;
+    align-items: center;
     flex-direction: column;
     display: flex;
     justify-content: center;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+    &--pricing {
+      border-bottom: 2px solid $primary-background-color-1;
+      @media (min-width: 768px) {
+        flex-direction: column;
+      }
+    }
+  }
+  &__price {
+    margin: 0.5rem;
+    color: $primary-background-color-1;
+  }
+  &__title {
+    color: $primary-background-color-1;
+    font-size: 2rem;
+    font-family: Pacifico;
   }
 }
 .about {
@@ -277,7 +303,6 @@ body {
     color: $primary-background-color-1;
     padding: 1rem;
     border: none;
-
     box-shadow: none;
     font-size: 1.25rem;
     font-family: Pacifico;
@@ -285,6 +310,14 @@ body {
     outline: none;
     cursor: pointer;
     box-shadow: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $hover;
+    }
+  }
+  &__text {
+    max-width: 400px;
   }
 }
 
@@ -302,9 +335,28 @@ body {
     color: $primary-background-color-1;
     margin: 1rem;
   }
-
-  &__instagram {
+  &__link-container {
+    display: flex;
+    justify-content: center; /* Centers the link horizontally */
+    align-items: center;
     margin: 1rem;
-    height: 32px;
+  }
+  &__link {
+    display: inline-block;
+  }
+  &__instagram {
+    display: block; /* Removes any extra space below the image */
+  }
+}
+
+.pricing {
+  display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.reverse {
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
   }
 }
