@@ -24,13 +24,34 @@ function validateForm() {
     return false;
   }
 
-  // Custom validation example: Ensure message is at least 10 characters
-  //   if (message.length < 10) {
-  //     alert("Message must be at least 10 characters long.");
-  //     return false;
-  //   }
-
-  // Additional validation logic can be added as needed
-
   return true; // Submit the form if all validations pass
 }
+
+document.getElementById("contactForm").addEventListener("submit", async function (event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  if (!validateForm()) {
+    return; // If validation fails, do not proceed
+  }
+
+  const formData = new FormData(event.target);
+  const formDataObj = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch(event.target.action, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formDataObj).toString(),
+    });
+
+    if (response.ok) {
+      document.getElementById("contactForm").reset();
+      window.location.href = "./pages/success.html"; // Redirect to success page
+    } else {
+      alert("There was an error sending your message. Please try again later.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("There was an error sending your message. Please try again later.");
+  }
+});

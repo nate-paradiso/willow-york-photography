@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodemailer": "^6.9.13"
+    "nodemailer": "^6.9.13",
+    "querystring": "^0.2.1"
   },
   "devDependencies": {
     "netlify-cli": "^17.26.3",

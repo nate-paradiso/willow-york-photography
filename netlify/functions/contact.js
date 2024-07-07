@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const querystring = require("querystring");
 
 exports.handler = async (event, context) => {
   if (event.httpMethod !== "POST") {
@@ -8,27 +9,25 @@ exports.handler = async (event, context) => {
     };
   }
 
-  const { name, email, message } = JSON.parse(event.body);
+  // Parse URL-encoded body
+  const { name, email, message } = querystring.parse(event.body);
 
-  // Create a transporter object using SMTP transport
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.MY_GMAIL_ADDRESS, // Use environment variable
-      pass: process.env.MY_GMAIL_PASSWORD, // Use environment variable
+      user: process.env.MY_GMAIL_ADDRESS,
+      pass: process.env.MY_GMAIL_PASSWORD,
     },
   });
 
-  // Setup email data
   let mailOptions = {
-    from: process.env.MY_GMAIL_ADDRESS, // Sender address
-    to: process.env.MY_GMAIL_ADDRESS
-    subject: "New Contact Form Submission",
+    from: process.env.MY_GMAIL_ADDRESS,
+    to: process.env.MY_GMAIL_ADDRESS,
+    subject: "New Contact Form Submission Willow York",
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
   try {
-    // Send email
     const info = await transporter.sendMail(mailOptions);
     console.log("Email sent:", info.response);
     return {
