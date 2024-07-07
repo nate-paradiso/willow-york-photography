@@ -1,0 +1,20 @@
+@use "./partials/typography.scss" as *;
+@use "./partials/variables.scss" as *;
+@use "./partials/mixins.scss" as *;
+
+.success {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 768px) {
+    margin: 15rem;
+  }
+  &__thank-you {
+    margin: 1rem;
+  }
+  &__message {
+    text-align: center;
+  }
+}

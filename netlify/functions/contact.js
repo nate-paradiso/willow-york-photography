@@ -1,6 +1,5 @@
-// netlify/functions/contact.js
-
 const nodemailer = require("nodemailer");
+const querystring = require("querystring");
 
 exports.handler = async (event, context) => {
   if (event.httpMethod !== "POST") {
@@ -10,37 +9,36 @@ exports.handler = async (event, context) => {
     };
   }
 
-  const { name, email, message } = JSON.parse(event.body);
+  // Parse URL-encoded body
+  const { name, email, message } = querystring.parse(event.body);
 
-  // Create a transporter object using SMTP transport
   let transporter = nodemailer.createTransport({
-    host: "smtp.example.com", // Replace with your SMTP server
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    service: "gmail",
     auth: {
-      user: "your-email@example.com", // Your SMTP username
-      pass: "your-email-password", // Your SMTP password
+      user: process.env.MY_GMAIL_ADDRESS,
+      pass: process.env.MY_GMAIL_PASSWORD,
     },
   });
 
-  // Setup email data
   let mailOptions = {
-    from: '"Contact Form" <your-email@example.com>',
-    to: "your-receiving-email@example.com",
-    subject: "New Contact Form Submission",
+    from: process.env.MY_GMAIL_ADDRESS,
+    to: process.env.MY_GMAIL_ADDRESS,
+    subject: "New Contact Form Submission Willow York",
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent:", info.response);
     return {
       statusCode: 200,
-      body: "Message sent successfully!",
+      body: JSON.stringify({ message: "Email sent successfully" }),
     };
   } catch (error) {
+    console.error("Error sending email:", error);
     return {
       statusCode: 500,
-      body: `Error: ${error.message}`,
+      body: JSON.stringify({ message: "Error sending email" }),
     };
   }
 };

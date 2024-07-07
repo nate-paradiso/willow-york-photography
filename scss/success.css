@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Pacifico";
+  src: url("../../assets/fonts/Pacifico-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url("../../assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf");
+  font-weight: 600;
+}
+.success {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .success {
+    margin: 15rem;
+  }
+}
+.success__thank-you {
+  margin: 1rem;
+}
+.success__message {
+  text-align: center;
+}/*# sourceMappingURL=success.css.map */
