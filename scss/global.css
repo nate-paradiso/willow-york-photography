@@ -31,6 +31,7 @@ body {
   background-color: #442c15;
   font-family: Inconsolata;
   font-weight: 400;
+  overflow-x: hidden; /* Prevent horizontal scroll bar */
 }
 
 .nav-container {
@@ -39,6 +40,7 @@ body {
   justify-content: center;
   width: 100%;
 }
+
 .nav {
   margin-top: 5rem;
   display: flex;
@@ -134,20 +136,22 @@ body {
     flex-direction: column;
     width: 100%;
     position: absolute;
-    left: 0;
     background-color: #442c15;
-    align-items: left;
   }
   .nav__links.nav__links--active {
-    text-transform: uppercase;
     display: flex;
     font-size: 1rem;
     border-top: 1px solid white;
     border-left: 1px solid white;
     border-bottom: 1px solid white;
-    margin-left: 7rem;
+    border-right: 1px solid white;
+    margin-left: 1rem;
+    right: 1rem;
     margin-top: 3rem;
+    position: fixed;
     padding-left: 1rem;
+    max-width: 100px;
+    z-index: 10;
   }
   .nav__links--item {
     margin: 0.5rem 0;
@@ -158,12 +162,10 @@ body {
   }
 }
 .hero {
-  margin: auto;
   display: flex;
-  width: 100%;
+  position: relative;
   align-items: center;
   justify-content: center;
-  width: 100%; /* Make the container full width */
   overflow: hidden; /* Hide any overflow */
 }
 .hero__container {
@@ -182,7 +184,7 @@ body {
 .hero__title {
   min-width: 15rem;
   position: absolute;
-  top: 35%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2rem; /* Adjust font size as needed */
@@ -222,7 +224,6 @@ body {
 }
 
 .photos {
-  margin: 2rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -270,6 +271,12 @@ body {
     flex-direction: column;
   }
 }
+.statement__phrase {
+  font-family: Pacifico;
+  color: #442c15;
+  font-size: 3rem;
+  text-align: center;
+}
 .statement__price {
   margin: 0.5rem;
   color: #442c15;
@@ -278,6 +285,10 @@ body {
   color: #442c15;
   font-size: 2rem;
   font-family: Pacifico;
+  text-align: center;
+}
+.statement__about {
+  margin-bottom: 1rem;
 }
 
 .about {
