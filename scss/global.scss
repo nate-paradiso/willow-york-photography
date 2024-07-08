@@ -26,11 +26,9 @@ body {
   background-color: $primary-background-color-1;
   font-family: Inconsolata;
   font-weight: 400;
+  overflow-x: hidden; /* Prevent horizontal scroll bar */
 }
 .nav-container {
-  @media (max-width: 768px) {
-    // border-bottom: 1px solid white;
-  }
   border: none;
   display: flex;
   justify-content: center;
@@ -133,21 +131,22 @@ body {
       flex-direction: column;
       width: 100%;
       position: absolute;
-
-      left: 0;
       background-color: $primary-background-color-1;
-      align-items: left;
 
       &.nav__links--active {
-        text-transform: uppercase;
         display: flex;
         font-size: 1rem;
         border-top: 1px solid white; // Border on the top side
         border-left: 1px solid white; // Border on the left side
         border-bottom: 1px solid white; // Border on the bottom side
-        margin-left: 7rem;
+        border-right: 1px solid white; // Border on the bottom side
+        margin-left: 1rem;
+        right: 1rem;
         margin-top: 3rem;
+        position: fixed;
         padding-left: 1rem;
+        max-width: 100px;
+        z-index: 10;
       }
 
       &--item {
@@ -163,12 +162,12 @@ body {
 }
 
 .hero {
-  margin: auto;
+  // margin: auto;
   display: flex;
-  width: 100%;
+  position: relative;
   align-items: center;
   justify-content: center;
-  width: 100%; /* Make the container full width */
+  // width: 100%; /* Make the container full width */
   overflow: hidden; /* Hide any overflow */
   &__container {
     display: flex;
@@ -186,7 +185,7 @@ body {
   &__title {
     min-width: 15rem;
     position: absolute;
-    top: 35%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -225,7 +224,6 @@ body {
   }
 }
 .photos {
-  margin: 2rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -264,6 +262,12 @@ body {
       }
     }
   }
+  &__phrase {
+    font-family: Pacifico;
+    color: $primary-background-color-1;
+    font-size: 3rem;
+    text-align: center;
+  }
   &__price {
     margin: 0.5rem;
     color: $primary-background-color-1;
@@ -272,6 +276,10 @@ body {
     color: $primary-background-color-1;
     font-size: 2rem;
     font-family: Pacifico;
+    text-align: center;
+  }
+  &__about {
+    margin-bottom: 1rem;
   }
 }
 .about {

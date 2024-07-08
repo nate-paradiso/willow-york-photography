@@ -13,6 +13,12 @@
   flex-direction: column;
   align-items: center;
   margin: 2rem;
+  margin-bottom: 4rem;
+}
+.contact__title {
+  font-family: Pacifico;
+  font-size: 2rem;
+  text-align: center;
 }
 .contact__form {
   color: black;
