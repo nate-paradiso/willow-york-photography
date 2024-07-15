@@ -10,8 +10,7 @@ exports.handler = async (event, context) => {
   }
 
   // Parse URL-encoded body
-  const { name, email, message } = querystring.parse(event.body);
-
+  const { name, email, message } = JSON.parse(event.body);
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
