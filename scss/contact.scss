@@ -8,6 +8,9 @@
   align-items: center;
   margin: 2rem;
   margin-bottom: 4rem;
+  @media (min-width: 768px) {
+    margin: 6rem;
+  }
   &__title {
     font-family: Pacifico;
     font-size: 2rem;
@@ -39,7 +42,6 @@
       padding: 0.75rem;
       border: none;
       background-color: #ffffff;
-      color: $font-another;
       font-size: 1rem;
 
       cursor: pointer;

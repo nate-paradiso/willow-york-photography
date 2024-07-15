@@ -10,8 +10,7 @@ exports.handler = async (event, context) => {
   }
 
   // Parse URL-encoded body
-  const { name, email, message } = querystring.parse(event.body);
-
+  const { name, email, message } = JSON.parse(event.body);
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -24,7 +23,7 @@ exports.handler = async (event, context) => {
     from: process.env.MY_GMAIL_ADDRESS,
     to: process.env.MY_GMAIL_ADDRESS,
     subject: "New Contact Form Submission Willow York",
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    text: `A message on Willow York Photography has been sent by:\n\nName: ${name}\nEmail: ${email}\n\nMessage: ${message}\n\n**Reply by clicking the submitted email address.**`,
   };
 
   try {

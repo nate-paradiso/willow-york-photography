@@ -87,7 +87,7 @@ body {
     &--item {
       margin: 0 5.5rem;
       @media (min-width: 769px) {
-        text-decoration: underline;
+        // text-decoration: underline;
         margin-bottom: 0.5rem;
       }
       @media (min-width: 1280px) {
@@ -198,10 +198,14 @@ body {
   background-color: $font;
   padding: 1rem;
   border-bottom: 2px solid;
-
+  &__container {
+    max-width: 1300px;
+    margin: auto;
+  }
   &-text {
     display: flex;
     margin: auto;
+
     color: $primary-background-color-1;
     font-size: 2rem;
     justify-content: center;
@@ -227,9 +231,11 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
   &-image {
     @media (min-width: 768px) {
-      width: 450px;
+      flex-direction: column;
+      width: 400px;
       margin: auto;
       padding: 1rem;
     }
@@ -248,15 +254,13 @@ body {
   text-align: center;
   &__container {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    display: flex;
     justify-content: center;
     @media (min-width: 768px) {
-      flex-direction: row;
     }
     &--pricing {
       border-bottom: 2px solid $primary-background-color-1;
+      align-items: center;
       @media (min-width: 768px) {
         flex-direction: column;
       }
@@ -361,6 +365,10 @@ body {
   display: flex;
   @media (max-width: 768px) {
     flex-direction: column;
+  }
+  &__container {
+    max-width: 1400px;
+    margin: auto;
   }
 }
 .reverse {
