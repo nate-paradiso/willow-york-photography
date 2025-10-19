@@ -66,8 +66,10 @@ body {
 }
 .nav__logo-text {
   font-family: Pacifico;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.3rem;
   color: #f4f2f2;
+  text-align: center;
+  line-height: 1.2;
 }
 @media (min-width: 768px) {
   .nav__logo-text {
@@ -80,28 +82,36 @@ body {
   }
 }
 .nav__logo-text--photography {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.1rem;
   font-family: Pacifico;
   color: #f4f2f2;
+}
+@media (min-width: 768px) {
+  .nav__logo-text--photography {
+    font-size: 2rem;
+  }
 }
 .nav__links {
   display: flex;
   text-decoration-line: none;
   text-transform: lowercase;
+  justify-content: space-evenly;
 }
 .nav__links--item {
-  margin: 0 5.5rem;
+  margin: 0 1.5rem;
 }
 @media (min-width: 769px) {
   .nav__links--item {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
   }
 }
 @media (min-width: 1280px) {
   .nav__links--item {
-    margin: 0 10rem;
-    margin-bottom: 0.5rem;
+    margin: 0 5rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
   }
 }
 .nav__toggle {
@@ -167,28 +177,48 @@ body {
   justify-content: center;
   overflow: hidden; /* Hide any overflow */
 }
+
+/* overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* adjust darkness (0.3–0.7) */
+  z-index: 0;
+}
+
 .hero__container {
   display: flex;
   justify-content: center;
   width: 100%;
 }
+
 .hero__container--image {
   height: 30vh;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1; /* ensures image stays behind overlay and text */
 }
+
 @media (min-width: 768px) {
   .hero__container--image {
     height: 600px;
   }
 }
+
 .hero__title {
   min-width: 15rem;
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem; /* Adjust font size as needed */
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
   text-align: center;
-  z-index: 1; /* Ensure title appears above image */
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  z-index: 1; /* above overlay */
+  letter-spacing: 0.05em;
 }
 
 .title {
@@ -315,7 +345,10 @@ body {
 }
 .about__photo {
   width: 300px;
+  border-radius: 10%;
+  margin-top: 0.5rem;
 }
+
 .about__button {
   background-color: #f4f2f2;
   color: #442c15;
@@ -384,4 +417,4 @@ body {
   .reverse {
     flex-direction: row-reverse;
   }
-}/*# sourceMappingURL=global.css.map */
+} /*# sourceMappingURL=global.css.map */
