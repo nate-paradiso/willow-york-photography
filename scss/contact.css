@@ -54,7 +54,7 @@
   transition: background-color 0.3s ease;
 }
 .contact__form button:hover {
-  background-color: #e9d3bd;
+  background-color: #746456;
 }
 .contact__form--input {
   color: black;
@@ -62,7 +62,7 @@
 
 .button {
   background-color: #f4f2f2;
-  color: #442c15;
+  color: #423020;
   padding: 1rem;
   border: none;
   box-shadow: none;
@@ -74,5 +74,5 @@
   transition: all 0.3s ease;
 }
 .button:hover {
-  background-color: #e9d3bd;
+  background-color: #746456;
 }/*# sourceMappingURL=contact.css.map */
